@@ -1,0 +1,89 @@
+@import "../../assets/stylesheets/variable.scss";
+.banner-section{
+    h1{
+        margin-top:3rem;
+        font-size: 3rem;
+    }
+    h4{
+        margin:auto;
+        font-size: 2rem;
+    }
+}
+.panel-third{
+    .panel-header{
+        padding-bottom: 30px;
+        h3{
+            font-size: 1.3rem;
+            line-height: 1.6;
+        }
+    }
+    .primary-button{
+        margin:auto;
+    }
+}
+.panel-fourth{
+    .panel-header{
+        h3{
+            font-size: 2rem;
+        }
+    }
+}
+.table-panel{
+    width:100%;
+   padding-top: 5px;
+    background-color:#fff;
+   .table-responsive{
+       .table{
+           margin-top: 20px;
+           border-top: none;
+           th,td{
+            padding-top: 28px;
+            padding-bottom: 28px;
+            text-align: center;
+            font-size: 1.5rem;
+            color:$primary-font-color;
+           }
+       }
+   }
+}
+.panel-fifth{
+    h3{
+        font-size: 2rem;
+    }
+}
+@media screen and (max-width:$phone){
+    .banner-section{
+        padding-top: 0 !important;
+        margin-bottom: 30px !important;
+        h4{
+            width:100% !important;
+        }
+    }
+.article-section{
+    .ar-col{
+        margin-bottom: 30px;
+        text-align: center;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+    .table-panel{
+        padding-top:15px;
+        .table-responsive{
+            .table{
+                th,td{
+                    font-size: 1.2rem;;
+                }
+            }
+        }
+    }
+    .panel-fifth{
+        .subscribe-section{
+            .primary-button{
+                margin: 15px auto 0;
+            }
+
+        }
+    }
+   
+}

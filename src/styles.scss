@@ -1,1 +1,95 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./assets/stylesheets/variable.scss";
+@import "./assets/stylesheets/mediaquery.scss";
+@import "./assets/stylesheets/helpers.scss";
+@import "./assets/stylesheets/common.scss";
+body{
+    font-family: 'Montserrat-Regularato' !important;
+    background-color:#181818;
+    font-size: 14px;
+    color:$primary-color;
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100vh;
+    display: inline-block;
+}
+// Font face
+@font-face {
+    font-family: 'Montserrat-Regularato';
+    src: url(assets/fonts/Montserrat-Regular.ttf) format("opentype");
+  }
+  @font-face {
+    font-family: 'Montserrat-SemiBold';
+    src: url(assets/fonts/Montserrat-SemiBold.ttf) format("opentype");
+  }
+  p{
+      font-size:18px;
+  }
+// Form control
+.form-panel{
+    .form-group{
+        margin-bottom: 37px;
+        label{
+            &.control-label{
+                font-size: 11px;
+                font-family:  $font-semibold;
+            } 
+        }
+        a.link-text{
+            font-size: 12px;
+        }
+        .form-control{
+            border-radius: 0 !important;
+            border:none;
+            background-color: $primary-color;
+            color:$primary-font-color;
+        }
+        .btn{
+            background-color: $primary-color !important;
+            height: calc(1.5em + 0.75rem + 2px);
+            border-radius: 0;
+            border:none;
+            line-height: 1;
+            font-size: 16px;
+            font-family:  $font-semibold;
+        }
+    }
+}
+.input-group{
+     textarea.form-control{
+        border-radius: 0 !important;
+        border:none;
+        background-color: $primary-color;
+        color:$primary-font-color;
+    }
+}
+// helper classes
+.link-text{
+    color:$link-text-primary;
+    font-family: $font-semibold;
+    cursor: pointer;
+    &:hover, &:active, &:focus{
+        color:$link-text-primary;
+    }
+}
+.font-regular{
+    font-family: $font-regular;
+}
+.font-semi-bold{
+    font-weight: bolder;
+}
+//alert section
+.alert-section{
+    background-color:$primary-color;
+    border-color: $primary-color;
+    border-radius:0;
+    box-shadow: 0 -5px 20px 0 rgba(198,198,198,.5);
+    -webkit-box-shadow: 0 -5px 20px 0 rgba(198,198,198,.5);
+    padding-right:20px;
+    margin-bottom: 0;
+    p{
+        font-size: 12px;
+        margin-bottom: 0;
+    }
+}

@@ -1,0 +1,27 @@
+@import "../stylesheets/variable.scss";
+@media screen and (max-width:$phone){
+        .panel-first, .panel-second, .panel-third, .panel-fourth, .panel-fifth, .panel-sixth{
+            margin-top:35px !important;
+            margin-bottom: 35px !important;
+        }
+    .footer{
+        .navbar-brand{
+            margin: 0 auto;
+        }
+        .navbar-nav{
+                justify-content: center !important;
+            
+        }
+    }
+    .subscribe-section{
+        flex-direction: column;
+        justify-content: center;
+        .col-md-7,.col-md-7{
+            width:100%;
+            max-width: 100%;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+    }
+  
+}

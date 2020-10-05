@@ -1,0 +1,208 @@
+@import "../../assets/stylesheets/variable.scss";
+.banner-section{
+    h1{
+        font-size: 3.5rem;
+    }
+    h4{
+        font-size:2rem;
+    }
+}
+.panel-first{
+    .article-box{
+        .panel-header{
+            h3{
+                font-size: 2rem;
+            }
+
+        }
+
+    }
+    
+}
+.panel-second{
+    .panel-header{
+        h3{
+            font-size: 2rem;
+            margin-top: 40px;
+        }
+    }
+}
+.conversation-details{
+    .column{
+        .input-group{
+textarea{
+    height:176px;
+}
+            &:before {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                margin-left: -5px;
+                border-width: 12px;
+                border-style: solid;
+                border-color: #c6c6c6 transparent transparent transparent;
+            }
+            
+        }
+        .btn-pos{
+            position: absolute;
+            right:3rem;
+            bottom:-40px;
+            &.link-text{
+                font-family: $font-regular;
+                font-size: 1.1rem;
+            }
+            &:hover{
+                text-decoration: none;
+            }
+        }
+        &:nth-child(even){
+            .btn-pos{
+                position: absolute;
+                left:3rem;
+                bottom:-40px;
+            }
+    }
+        }
+     
+}
+.conversation-tab{
+    display: flex;
+    justify-content: center;
+    width:100%;
+    padding-top:102px;
+    a{
+        float: left;
+        min-width:100px;
+        padding:10px 30px;
+        font-size: 18px;
+        color:$link-text-primary;
+        text-align: center;
+        border: 2px solid $primary-color;
+        &:nth-child(odd){
+            border-right-width:1px;
+        }
+        &:nth-child(even){
+            border-left-width: 1px;
+        }
+        &:hover{
+            text-decoration: none;
+            color:$primary-font-color;
+            background-color: $primary-color;
+        }
+    }
+}
+.rating-section{
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+    li{
+        font-size: 25px;
+        line-height: 2;
+        svg{
+            margin-right: 5px;
+            vertical-align: middle;
+            &.bi-emoji-laughing{
+                fill: currentColor;
+                color: yellow;
+            }
+            &.bi-star-fill{
+                fill: currentColor;
+                color: yellow;
+            }
+           
+        }
+    }
+}
+.panel-third,.panel-fourth,.panel-fifth{
+    .panel-header{
+        h3{
+            font-size: 2rem;
+            line-height: 1.5;
+        }
+    }
+}
+.panel-fourth{
+    .panel-header{
+        padding-bottom: 8px;
+        h3{
+line-height: 1.4;        
+}
+    }
+}
+.subscribe-section{
+    h3{
+      font-size: 2.2rem;
+      line-height: 1.4;
+    }
+  }
+@media screen and (max-width:$phone){
+    .banner-section {
+        padding-top:0 !important;
+        h1{
+            text-align: center;
+            font-size: 3rem;
+        }
+        h3{
+            width:100% !important;
+        }
+        .primary-button{
+            margin:auto;
+        }
+    }
+.panel-first, .panel-second, .panel-third, .panel-fourth, .panel-fifth{
+    margin-top:35px !important;
+    margin-bottom: 35px !important;
+}
+.panel-first, .panel-third{
+
+    .article-box{
+        .article-col{
+            padding-right:0px !important;
+            padding-left:0px !important;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.conversation-details{
+    .column{
+        padding-left:0 !important;
+        padding-right:0 !important;
+        width: 100%;
+        margin-bottom: 70px;
+        .input-group{
+            padding-left:0 !important;
+        padding-right:0 !important;
+        }
+    }
+}
+.rating-section{
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    li{
+        padding-right: 10px !important;
+        flex:1 1 0;
+        align-self: center;
+    }
+}
+.panel-fourth{
+    .article-section{
+        padding:0 10px;
+        .ar-col{
+            padding-right:0px !important;
+            padding-left:0px !important;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+    }
+}
+.subscribe-section{
+    .primary-button{
+        margin: auto;
+    }
+}
+}

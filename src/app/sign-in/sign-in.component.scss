@@ -1,0 +1,13 @@
+@import "../../assets/stylesheets/variable.scss";
+.form-panel{
+    margin-top: 30px;
+    span{
+        font-size: 16px;
+        font-family: $font-semibold;
+        line-height: 2;
+    }
+}
+.align {
+    text-align: center;
+    margin-top: 25px;
+}

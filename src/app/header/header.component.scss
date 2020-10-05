@@ -1,0 +1,47 @@
+@import "../../assets/stylesheets/variable.scss";
+.header{
+    .font-semi-weight{
+        font-weight: bolder;
+    }
+    .navbar{
+        background-color:transparent !important;
+        .navbar-brand{
+            color:$primary-color;
+            font-weight: 100;
+        }
+        .navbar-toggler-icon{
+            color:$primary-color;
+            fill:currentColor;
+            background:transparent;
+        }
+        ul{
+            li{
+                margin-right: 20px;
+                font-size: 17px;
+                margin-left: 15px;
+                line-height: 1.8;
+                letter-spacing: 1px;
+                font-family: 'Montserrat-Regularato';
+                a{
+                    color:$primary-color;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:1024px){
+    .header {
+        .navbar{
+            padding-left: 15px !important;
+        }
+    }
+}
+@media screen and (max-width : $phone){
+    .main-container{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .d-xs-none{
+        display: none !important;
+    }
+}

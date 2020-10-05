@@ -1,0 +1,63 @@
+@import "../../assets/stylesheets/variable.scss";
+.footer{
+    .link-text-col{
+        color:$link-text-primary;
+        cursor: pointer;
+        &:hover, &:active, &:focus{
+            color:$link-text-primary;
+        }
+    }
+    padding:20px 0;
+    .main-container{
+        padding-left:0;
+        padding-right:0;
+    }
+    .navbar-nav{
+        li{
+            margin-right:20px;
+            font-size: 1.2rem;
+        }
+    }
+    .list-unstyled{
+        padding-top: 12px;
+        li{
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            line-height: 1.4;
+            a{
+                color:$primary-color;
+
+            }
+            
+        }
+    }
+}
+@media screen and (max-width: $phone){
+    .footer{
+        .main-container{
+            padding-left: 15px;
+            padding-right: 15px;
+            .d-flex{
+                flex-direction: column;
+                padding:0 !important;
+
+            }
+            ul.navbar-nav{
+                li{
+                    &:last-child{
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 1024px){
+    .footer{
+        .main-container{
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+}

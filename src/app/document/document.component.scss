@@ -1,0 +1,60 @@
+@import "../../assets/stylesheets/variable.scss";
+.panel-first{
+    margin-top:10rem;
+    h1{
+        font-size: 3.7rem;
+        line-height: 1.4;
+    }
+    h3{
+        font-size: 2rem;
+    }
+}
+.sidebar-navigation{
+    background-color: $primary-color;
+    margin-top: 5.5rem;
+    ul{
+        width:100%;
+        li{
+            position: relative;
+            font-size: 18px;
+            a{
+                color: $primary-font-color;
+            }
+            svg{
+                position: absolute;
+                top:10px;
+                right:10px;
+                fill: currentColor;
+                color: $primary-font-color;
+            }
+        }
+    }
+}
+.subscribe-section{
+    h3{
+      font-size: 2.2rem;
+      line-height: 1.4;
+    }
+  }
+  @media screen and (max-width :$phone){
+      .panel-first{
+          margin-bottom: 35px !important;
+          .doc-block{
+              padding-right:0 !important;
+              width:100%;
+          }
+          .doc-content{
+              padding-left: 0 !important;
+              text-align: center;
+              float: none!important;
+    padding-left: 15px !important;
+          }
+
+      }
+      .subscribe-section{
+        .primary-button{
+            margin: auto;
+          }
+      }
+            
+  }
