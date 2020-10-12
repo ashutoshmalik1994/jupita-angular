@@ -1,5 +1,5 @@
 <!-- content section -->
-<app-header></app-header>
+<app-header *ngIf="headerFooter"></app-header>
 <div class="wrapper"><router-outlet></router-outlet></div>
 <!-- footer -->
-<app-footer></app-footer>
+<app-footer *ngIf="headerFooter"></app-footer>

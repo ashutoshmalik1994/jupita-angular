@@ -1,13 +1,11 @@
 @import "../../assets/stylesheets/variable.scss";
 .header{
-    .font-semi-weight{
-        font-weight: bolder;
-    }
     .navbar{
         background-color:transparent !important;
+        font-family: $font-family-brand;
+
         .navbar-brand{
             color:$primary-color;
-            font-weight: 100;
         }
         .navbar-toggler-icon{
             color:$primary-color;
@@ -21,9 +19,13 @@
                 margin-left: 15px;
                 line-height: 1.8;
                 letter-spacing: 1px;
-                font-family: 'Montserrat-Regularato';
+                font-family: $font-family-brand;
                 a{
                     color:$primary-color;
+                }
+                &:last-child{
+                    font-family: $font-family-brand;
+                    font-weight:  $font-semibold;
                 }
             }
         }

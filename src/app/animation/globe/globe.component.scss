@@ -1,0 +1,13 @@
+.Globe {
+    background: transparent !important;
+}
+
+.Globe,
+.Globe canvas {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    right: 0px;
+    top:0;
+}
+

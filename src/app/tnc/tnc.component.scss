@@ -1,0 +1,42 @@
+@import "../../assets/stylesheets/variable.scss";
+h2{
+    font-size: 3rem;
+}
+.page-navigation{
+    ul{
+        li{
+            font-family: $font-family-brand;
+            font-weight:  $font-semibold;           
+            font-size: 20px;
+            margin: 0 20px;
+            a{
+                color: $link-text-primary;
+                padding-left: 0;
+                padding-right: 0;
+            }
+            &.active{
+                a{
+                    border-bottom: 2px solid $primary-color;                }
+            }
+        }
+    }
+}
+@media screen and (max-width:$phone){
+    .content-area{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .panel-header{
+        h2{
+            font-size: 2rem;
+        }
+    }
+    .page-navigation{
+        ul{
+            li{
+                margin:0 10px;
+                font-size: 16px;
+            }
+        }
+    }
+}

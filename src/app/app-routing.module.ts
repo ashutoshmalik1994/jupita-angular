@@ -35,7 +35,7 @@ const routes: Routes = [
     loadChildren: () => import('./sign-in/sign-in.module').then(m => m.SignInModule)
   },
   {
-    path: 'tnc',
+    path: 'termsandconditions',
     loadChildren: () => import('./tnc/tnc.module').then(m => m.TncModule)
   },
   {

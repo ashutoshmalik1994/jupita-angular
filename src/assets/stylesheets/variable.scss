@@ -1,13 +1,23 @@
+$montserrat-regularwoff-font-path: "assets/fonts/Montserrat-Regular.woff";
+$montserrat-regularwoff2-font-path: "assets/fonts/Montserrat-Regular.woff2";
+$montserrat-regularttf-font-path: "assets/fonts/Montserrat-Regular.ttf";
+$font-family-brand: 'Montserrat-Regular';
 
 $primary-color:#C6C6C6;
 $link-text-primary:#C6C6C6;
 $primary-font-color:#181818;
 
 
-$font-regular:'Montserrat-Regularato';
-$font-semibold:'Montserrat-SemiBold';
+//  $font-regular:'Montserrat-Regular';
+  $font-semibold: 600;
 
 // Responsive screen declaration
 $phone: 767px;
 $tablet-min:768px;
 $tablet-max:1024px;
+
+$total: 350; // total particles
+$orb-size: 100px;
+$particle-size: 2px;
+$time: 30s;
+$base-hue: 0; // change for diff colors (180 is nice)
