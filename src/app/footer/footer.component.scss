@@ -8,10 +8,6 @@
         }
     }
     padding:20px 0;
-    .main-container{
-        padding-left:0;
-        padding-right:0;
-    }
     .navbar-nav{
         li{
             margin-right:20px;
@@ -23,7 +19,7 @@
         padding-top: 12px;
         li{
             margin-bottom: 16px;
-            font-size: 17px;
+            font-size: 1.1rem;
             letter-spacing: 1px;
             line-height: 1.4;
             a{
@@ -50,6 +46,9 @@
                         margin-right: 0;
                     }
                 }
+            }
+            .list-unstyled{
+                float: none;
             }
         }
     }

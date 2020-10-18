@@ -1,12 +1,17 @@
 @import "../../assets/stylesheets/variable.scss";
+.main-container{
+    font-family: $font-family-poppins;
+  }
 .panel-first{
     margin-top:10rem;
     h1{
         font-size: 3.7rem;
         line-height: 1.4;
+        font-family: $font-family-poppins;
     }
     h3{
         font-size: 2rem;
+        font-family: $font-family-poppins;
     }
 }
 .sidebar-navigation{
@@ -17,8 +22,10 @@
         li{
             position: relative;
             font-size: 18px;
+            font-family: $font-family-poppins;
             a{
                 color: $primary-font-color;
+                font-family: $font-family-poppins;
             }
             svg{
                 position: absolute;
@@ -34,11 +41,15 @@
     h3{
       font-size: 2.2rem;
       line-height: 1.4;
+      font-family: $font-family-poppins;
     }
   }
   @media screen and (max-width :$phone){
       .panel-first{
           margin-bottom: 35px !important;
+          h1{
+              font-size: 2.6rem;
+          }
           .doc-block{
               padding-right:0 !important;
               width:100%;

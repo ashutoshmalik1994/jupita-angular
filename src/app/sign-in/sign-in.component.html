@@ -1,6 +1,6 @@
 <div class="partical-bg-wrap"><app-partical-background></app-partical-background></div>
 <div class="container">
-    <div class="align">
+    <div class="align mt-9">
         <a class="navbar-brand" href="/"><img class="img-fluid" alt="JUPITA" width="108" height="60"
                 src="./../../../assets/images/Jupita.png"></a>
     </div>
@@ -11,7 +11,7 @@
                 Don't have an account? Sign up
                 <strong><a href="/sign-up" class="link-text">here</a></strong>
             </small>
-            <form class="form-horizontal mt-5 pr-3" method="post" action="#">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-horizontal mt-5 pr-3" method="post" action="#">
 
                 <div class="form-group">
                     <div class="col-sm-12">
@@ -19,7 +19,11 @@
                     </div>
                     <div class="col-sm-12">
                         <div class="input-group">
-                            <input type="text" class="form-control" name="email" id="email">
+                            <input formControlName="email" type="text" class="form-control" name="email" id="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                <div *ngIf="f.email.errors.required">Email is required.</div>
+                                <div *ngIf="f.email.errors.email">Please enter valid email.</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -30,14 +34,17 @@
                     </div>
                     <div class="col-sm-12">
                         <div class="input-group">
-                            <input type="password" class="form-control" name="password" id="password">
+                            <input formControlName="password" type="password" class="form-control" name="password" id="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                <div *ngIf="f.password.errors.required">Email is required.</div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="form-group pt-3">
                     <div class="col-sm-12">
-                        <button type="button" class="btn btn-light btn-lg btn-block login-button mt-2">Continue</button>
+                        <button class="btn btn-light btn-lg btn-block login-button mt-2">Continue</button>
                     </div>
                 </div>
             </form>

@@ -14,7 +14,7 @@
         }
         ul{
             li{
-                margin-right: 20px;
+                margin-right: 35px;
                 font-size: 17px;
                 margin-left: 15px;
                 line-height: 1.8;
@@ -22,10 +22,12 @@
                 font-family: $font-family-brand;
                 a{
                     color:$primary-color;
+                    padding-right:0;
                 }
                 &:last-child{
                     font-family: $font-family-brand;
                     font-weight:  $font-semibold;
+                    margin-right:0;
                 }
             }
         }
@@ -39,10 +41,6 @@
     }
 }
 @media screen and (max-width : $phone){
-    .main-container{
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
     .d-xs-none{
         display: none !important;
     }

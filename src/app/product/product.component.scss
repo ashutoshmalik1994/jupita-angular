@@ -1,10 +1,15 @@
 @import "../../assets/stylesheets/variable.scss";
+.main-container{
+    font-family: $font-family-poppins;
+}
 .banner-section{
     h1{
         font-size: 3.5rem;
+        font-family: $font-family-poppins;
     }
     h4{
         font-size:2rem;
+        font-family: $font-family-poppins;
     }
 }
 .panel-first{
@@ -12,6 +17,7 @@
         .panel-header{
             h3{
                 font-size: 2rem;
+                font-family: $font-family-poppins;
             }
 
         }
@@ -24,11 +30,13 @@
         h3{
             font-size: 2rem;
             margin-top: 40px;
+            font-family: $font-family-poppins;
         }
     }
 }
 .conversation-details{
     .column{
+        font-family: $font-family-poppins;
         .input-group{
 textarea{
     height:176px;
@@ -72,6 +80,7 @@ textarea{
     justify-content: center;
     width:100%;
     padding-top:102px;
+    font-family: $font-family-poppins;
     a{
         float: left;
         min-width:100px;
@@ -100,6 +109,7 @@ textarea{
     li{
         font-size: 25px;
         line-height: 2;
+        font-family: $font-family-poppins;
         svg{
             margin-right: 5px;
             vertical-align: middle;
@@ -120,6 +130,7 @@ textarea{
         h3{
             font-size: 2rem;
             line-height: 1.5;
+            font-family: $font-family-poppins;
         }
     }
 }
@@ -127,7 +138,7 @@ textarea{
     .panel-header{
         padding-bottom: 8px;
         h3{
-line-height: 1.4;        
+            line-height: 1.4;        
 }
     }
 }
@@ -135,17 +146,21 @@ line-height: 1.4;
     h3{
       font-size: 2.2rem;
       line-height: 1.4;
+      font-family: $font-family-poppins;
     }
   }
 @media screen and (max-width:$phone){
     .banner-section {
         padding-top:0 !important;
+        padding-left: 0 !important;
         h1{
             text-align: center;
             font-size: 3rem;
         }
-        h3{
+        h4{
             width:100% !important;
+            text-align: center;
+            font-size: 1.6rem;
         }
         .primary-button{
             margin:auto;

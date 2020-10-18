@@ -13,7 +13,8 @@ export class AppComponent {
   constructor(private router: Router) {
     router.events.subscribe( event => {
       if (event instanceof NavigationEnd) {
-        if (event.url == "/sign-up" || event.url == "/sign-in" || event.url == "/forgot-password") {
+        const urlNotAllowed = event.url.split('/')[1];
+        if (urlNotAllowed == "sign-up" || urlNotAllowed == "sign-in" || urlNotAllowed == "forgot-password" || urlNotAllowed == "confirmation") {
           this.headerFooter = false;
         } else {
           this.headerFooter = true;

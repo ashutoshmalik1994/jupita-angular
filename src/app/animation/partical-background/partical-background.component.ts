@@ -96,7 +96,7 @@ export class ParticalBackgroundComponent implements OnInit {
                         "enable": true,
                         "mode": "push"
                     },
-                    "resize": true
+                    "resize": true,
                 },
                 "modes": {
                     "grab": {

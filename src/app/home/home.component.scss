@@ -1,4 +1,7 @@
 @import "../../assets/stylesheets/variable.scss";
+.main-container{
+  font-family: $font-family-poppins;
+}
 .banner-section {
   position: relative;
   h1{
@@ -35,14 +38,6 @@
     font-size: 2.2rem;
     line-height: 1.4;
   }
-}
-.globe-wrap{
-  position: absolute; 
-  width:55%;
-  height:100%; 
-  top:0;
-  right:0; 
-  overflow:hidden;
 }
 // Responsive
 @media screen and (max-width:$phone){

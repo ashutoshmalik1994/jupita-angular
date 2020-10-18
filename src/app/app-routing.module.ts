@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { ConfirmemailComponent } from './confirmemail/confirmemail.component';
+import { AuthGuard } from './_helpers';
 
 const routes: Routes = [
   {
@@ -37,6 +39,15 @@ const routes: Routes = [
   {
     path: 'termsandconditions',
     loadChildren: () => import('./tnc/tnc.module').then(m => m.TncModule)
+  },
+  {
+    path: 'user',
+    loadChildren: () => import('./user/user.module').then(m => m.UserModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'confirmation/:id',
+    component: ConfirmemailComponent
   },
   {
     path: '',

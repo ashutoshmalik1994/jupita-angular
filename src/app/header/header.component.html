@@ -1,8 +1,8 @@
 
 <header class="header mb-4 mt-4 pt-4">
-    <div class="main-container pl-0 pr-0">
+    <div class="main-container">
               <!-- logo -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light pl-0">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <a class="navbar-brand" href="/"><img class="img-fluid" alt="JUPITA" width="108" height="19" src="./../../../assets/images/Jupita.png"></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"><svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-list" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -20,7 +20,10 @@
               <li class="nav-item">
                 <a class="nav-link" href="#" routerLink="/document" routerLinkActive="active">Docs</a>
               </li>
-              <li class="d-xs-none">
+              <li class="d-xs-none" *ngIf="logout">
+                  <a class="nav-link" routerLinkActive="active" (click)="logoutUser()">Sign out</a>
+              </li>
+              <li class="d-xs-none" *ngIf="!logout">
                   <a class="nav-link" href="#" routerLink="/sign-up" routerLinkActive="active">Sign up</a>
               </li>
             </ul>

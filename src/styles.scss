@@ -43,13 +43,20 @@ body{
             } 
         }
         a.link-text{
-            font-size: 12px;
+            font-size: 11px;
         }
         .form-control{
             border-radius: 0 !important;
             border:none;
             background-color: $primary-color;
             color:$primary-font-color;
+            color: $primary-font-color;
+            &:focus{
+                outline: none;
+                border:none;
+                box-shadow: none;
+                background-color: $primary-color;
+            }
         }
         .btn{
             background-color: $primary-color !important;
@@ -58,8 +65,16 @@ body{
             border:none;
             line-height: 1;
             font-size: 16px;
-            font-family: $font-family-brand;
-            font-weight:  $font-semibold;        }
+            color:$primary-font-color;
+            font-family: $font-family-brand !important;
+            font-weight:  $font-semibold !important;        
+        }
+        .msg{
+            width:100%;
+            color:$primary-color;
+            font-size: 11px !important;
+
+        }
     }
 }
 .input-group{
