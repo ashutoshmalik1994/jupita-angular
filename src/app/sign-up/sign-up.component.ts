@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { AuthService } from '../service/auth.service';
 import { AlertService } from '../service/alert.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -18,7 +19,8 @@ export class SignUpComponent implements OnInit {
   constructor (
     private formBuilder: FormBuilder,
     private authService: AuthService,
-    private alertService: AlertService
+    private alertService: AlertService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -56,6 +58,7 @@ export class SignUpComponent implements OnInit {
       .subscribe({
           next: () => {
               this.alertService.success('Registration successful, please verify your email address to login.', { keepAfterRouteChange: true, autoClose: true });
+              this.router.navigate(['/sign-in']);
           },
           error: error => {
               this.alertService.error(error.error.message, {autoClose: true});
