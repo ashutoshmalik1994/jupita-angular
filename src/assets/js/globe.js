@@ -15955,8 +15955,8 @@ export class Globe {
         this.countryList = t
     }
     addCamera() {
-        const t = .70 * this.windowH,
-            e = -this.aspectRatio * this.windowH * .70,
+        const t = 1 * this.windowH,
+            e = -this.aspectRatio * this.windowH * 1,
             i = 4 * this.globeRadius;
         this.camera || (this.camera = new Gs(0, 0, 0, 0, 0, 0)), this.camera.left = e, this.camera.right = -e, this.camera.top = t, this.camera.bottom = -t, this.camera.near = -i, this.camera.far = i, this.shiftCamera(), this.camera.updateProjectionMatrix()
     }

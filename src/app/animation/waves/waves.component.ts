@@ -72,7 +72,7 @@ export class WavesComponent implements OnInit {
           },
           "move": {
               "enable": true,
-              "speed": 2,
+              "speed": 0.7,
               "direction": "top",
               "random": false,
               "straight": true,
@@ -164,8 +164,9 @@ export class WavesComponent implements OnInit {
                   this.container = this.rnd.selectRootElement(this.elem.nativeElement);
           
                   this.camera = new PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
-                  this.camera.position.y = - 50;
-                  this.camera.position.z = 300;
+                //   this.camera.position.y = 50;
+                  this.camera.position.z = 400;
+                //   this.camera.rotation.x = 0.35;
           
                   this.scene = new Scene();
           
@@ -213,7 +214,7 @@ export class WavesComponent implements OnInit {
                   this.renderer = new WebGLRenderer({ antialias: true, alpha: true });
                   this.renderer.setPixelRatio(window.devicePixelRatio);
                   this.renderer.setSize(window.innerWidth, window.innerHeight);
-                  this.renderer.setClearColor (0x181818, 1);
+                //   this.renderer.setClearColor (0x181818, 1);
                   this.container.appendChild(this.renderer.domElement);
           
                   // this.container.addEventListener('pointermove', this.onPointerMove.bind(this), false);
@@ -226,6 +227,12 @@ export class WavesComponent implements OnInit {
   }
 
   onWindowResize() {
+
+    this.windowHalfX = window.innerWidth / 2;
+    this.windowHalfY = window.innerHeight / 2;
+
+    this.camera.aspect = window.innerWidth / window.innerHeight;
+    this.camera.updateProjectionMatrix();
 
       this.renderer.setSize(window.innerWidth, window.innerHeight);
 
@@ -270,7 +277,7 @@ export class WavesComponent implements OnInit {
 
       this.renderer.render(this.scene, this.camera);
 
-      this.count += 0.1;
+      this.count += 0.04;
 
   }
 
