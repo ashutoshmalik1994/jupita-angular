@@ -15961,7 +15961,7 @@ export class Globe {
         this.camera || (this.camera = new Gs(0, 0, 0, 0, 0, 0)), this.camera.left = e, this.camera.right = -e, this.camera.top = t, this.camera.bottom = -t, this.camera.near = -i, this.camera.far = i, this.shiftCamera(), this.camera.updateProjectionMatrix()
     }
     shiftCamera() {
-        const t = 1.05 * this.globeRadius;
+        const t = 2.05 * this.globeRadius;
         this.camera.position.x = -t / 100, this.camera.position.y = .1 * this.globeRadius
     }
     addRenderer() {

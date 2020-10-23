@@ -40,6 +40,14 @@
   }
 }
 // Responsive
+@media screen and (max-width:1024px){
+  .panel-fourth{
+    margin-top:2rem !important;
+    .main-globe-content{
+      margin-top: 100px;
+    }
+  }
+}
 @media screen and (max-width:$phone){
 
         .banner-section {
