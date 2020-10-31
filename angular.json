@@ -17,6 +17,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "tsparticles"
+            ],
             "outputPath": "dist/jupita-frontend/browser",
             "index": "src/index.html",
             "main": "src/main.ts",

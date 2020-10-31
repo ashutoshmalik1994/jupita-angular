@@ -4,7 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { SignInRoutingModule } from './sign-in-routing.module';
 import { SignInComponent } from './sign-in.component';
-import { ParticleBackgroundModule } from '../animation/partical-background/particle-background.module';
+import { NgParticlesModule } from 'ng-particles';
 
 
 @NgModule({
@@ -12,8 +12,8 @@ import { ParticleBackgroundModule } from '../animation/partical-background/parti
   imports: [
     CommonModule,
     SignInRoutingModule,
-    ParticleBackgroundModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgParticlesModule
   ]
 })
 export class SignInModule { }

@@ -240,3 +240,17 @@ textarea{
         margin-top: 115%;
     }
 }
+.waves-wrapper {
+    position: relative;
+}
+
+#waves-js {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: -20%;
+    left: 0;
+    @media screen and (max-width: 375px){
+        bottom: -65%;
+    }
+}

@@ -7,6 +7,7 @@ const indexTwoHtml = join(distFolderr, 'index.html');
 const template = fs.readFileSync(indexTwoHtml).toString();
 const win = domino.createWindow(template);
 global['window'] = win;
+global['self'] =  win;
 global['document'] = win.document;
 win.matchMedia = window.matchMedia || function() {
   return {

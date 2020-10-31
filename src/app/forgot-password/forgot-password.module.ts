@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ForgotPasswordRoutingModule } from './forgot-password-routing.module';
 import { ForgotPasswordComponent } from './forgot-password.component';
-import { ParticleBackgroundModule } from '../animation/partical-background/particle-background.module';
+import { NgParticlesModule } from 'ng-particles';
 
 
 
@@ -12,7 +12,7 @@ import { ParticleBackgroundModule } from '../animation/partical-background/parti
   imports: [
     CommonModule,
     ForgotPasswordRoutingModule,
-    ParticleBackgroundModule
+    NgParticlesModule
   ]
 })
 export class ForgotPasswordModule { }

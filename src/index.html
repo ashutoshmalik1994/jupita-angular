@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>JupitaFrontend</title>
   <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
@@ -12,32 +12,5 @@
 </head>
 <body>
   <app-root></app-root>
-  <script type="x-shader/x-vertex" id="vertexshader">
-
-    attribute float scale;
-  
-    void main() {
-  
-        vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
-  
-        gl_PointSize = scale * ( 10.0 / - mvPosition.z );
-  
-        gl_Position = projectionMatrix * mvPosition;
-  
-    }
-  
-  </script>
-  
-  <script type="x-shader/x-fragment" id="fragmentshader">
-  
-    uniform vec3 color;
-  
-    void main() {
-  
-        gl_FragColor = vec4(vec3(1.0,1.0,1.0),1.0);
-  
-    }
-  
-  </script>
 </body>
 </html>
