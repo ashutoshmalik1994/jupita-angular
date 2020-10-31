@@ -4,7 +4,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { SignUpRoutingModule } from './sign-up-routing.module';
 import { SignUpComponent } from './sign-up.component';
-import { NgParticlesModule } from 'ng-particles';
 
 
 
@@ -13,8 +12,7 @@ import { NgParticlesModule } from 'ng-particles';
   imports: [
     CommonModule,
     SignUpRoutingModule,
-    ReactiveFormsModule,
-    NgParticlesModule
+    ReactiveFormsModule
   ]
 })
 export class SignUpModule { }
