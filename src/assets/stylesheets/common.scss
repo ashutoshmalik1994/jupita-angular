@@ -7,11 +7,12 @@
     font-size: 16px;
     font-family: $font-family-brand !important;
     font-weight:  $font-semibold !important;
+    color: $primary-font-color !important;
     &:focus,&:active{
         border:none;
         outline:none;
         box-shadow: none;
-    }        
+    }
 }
 .panel-first, .panel-second, .panel-third, .panel-fourth, .panel-fifth, .panel-sixth{
     width:100%;
@@ -274,7 +275,7 @@
         app-globe {
 
     .js-globe{
-        left:-8% ;  
+        left:-7% ;  
     }
 }
 }
@@ -284,7 +285,17 @@
         app-globe {
 
     .js-globe{
-        left:-13% ;  
+        left:-8% ;  
+    }
+}
+}
+}
+@media screen and (min-width:2400px){
+    .globe-wrap{
+        app-globe {
+
+    .js-globe{
+        left:-9% ;  
     }
 }
 }

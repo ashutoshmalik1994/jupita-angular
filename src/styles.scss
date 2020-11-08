@@ -107,9 +107,13 @@ body{
     border-color: $primary-color;
     border-radius:0;
     box-shadow: 0 -5px 20px 0 rgba(198,198,198,.5);
-    -webkit-box-shadow: 0 -5px 20px 0 rgba(198,198,198,.5);
+    -webkit-box-shadow: 0 -5px 7px 0 rgba(198,198,198,.5);
     padding-right:20px;
     margin-bottom: 0;
+    left: 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     p{
         font-size: 12px;
         margin-bottom: 0;

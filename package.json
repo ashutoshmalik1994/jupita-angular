@@ -30,9 +30,7 @@
     "express": "^4.15.2",
     "jquery": "^3.5.1",
     "mock-browser": "^0.92.14",
-    "ng-particles": "^2.1.2",
     "rxjs": "~6.6.0",
-    "three": "^0.121.1",
     "tslib": "^2.0.0",
     "tsparticles": "^1.18.2",
     "zone.js": "~0.10.2"

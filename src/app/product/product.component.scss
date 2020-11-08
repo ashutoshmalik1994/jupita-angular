@@ -254,6 +254,7 @@ textarea{
     position: absolute;
     bottom: -20%;
     left: 0;
+    display: inline-block;
     @media screen and (max-width: 375px){
         bottom: -65%;
     }

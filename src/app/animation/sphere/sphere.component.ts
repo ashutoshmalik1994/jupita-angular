@@ -6,7 +6,7 @@ import { isPlatformBrowser } from '@angular/common';
     templateUrl: './sphere.component.html',
     styleUrls: ['./sphere.component.scss']
 })
-export class SphereComponent implements AfterViewInit  {
+export class SphereComponent implements AfterViewInit {
 
     public isBrowser: boolean;
 
@@ -18,24 +18,28 @@ export class SphereComponent implements AfterViewInit  {
 
     @ViewChild("particlesphere") Particlesphere: ElementRef;
 
-    ngAfterViewInit (): void {
+    ngAfterViewInit(): void {
         this._ngZone.runOutsideAngular(() => {
-            for (let i = 0; i <= 375; i++) {
-                let el = this.renderer.createElement("div");
-                let main_el = this.Particlesphere.nativeElement;
-                this.renderer.addClass(el, "c");
-                this.renderer.appendChild(main_el, el)
-                main_el.appendChild(el)
-            }
+          if (this.isBrowser) {
             setTimeout(function () {
-                let elements = Array.from(document.getElementsByClassName("c"));
-
-                elements.forEach((element, i) => {
-                    if (i < 350) {
-                        setTimeout(function () { element["classList"].add('active'); }, 8 * i);
-                    }
-                });
-            }, 8000);
+    
+                for (let i = 0; i <= 375; i++) {
+                    let el = document.createElement("div"),
+                        main_el = document.getElementById("particle-sphere")
+                    el.classList.add("c");
+                    main_el.appendChild(el)
+                }
+                setTimeout(function () {
+                    let elements = Array.from(document.getElementsByClassName("c"));
+    
+                    elements.forEach((element, i) => {
+                        if (i < 350) {
+                            setTimeout(function () { element.classList.add('active'); }, 8 * i);
+                        }
+                    });
+                }, 8000);
+            }, 500);
+          }
         });
     }
 
