@@ -6,11 +6,11 @@ import { AlertService } from '../service/alert.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-forgot-password',
-  templateUrl: './forgot-password.component.html',
-  styleUrls: ['./forgot-password.component.scss']
+  selector: 'app-resend-verification-email',
+  templateUrl: './resend-verification-email.component.html',
+  styleUrls: ['./resend-verification-email.component.scss']
 })
-export class ForgotPasswordComponent implements OnInit {
+export class ResendVerificationEmailComponent implements OnInit {
 
   form: FormGroup;
   loading = false;
@@ -49,12 +49,17 @@ export class ForgotPasswordComponent implements OnInit {
       if (this.form.invalid) {
           return;
       }
-      console.log(this.form.value.email)
-      this.authService.sendForgotPasswordLink(this.form.value)
+      const emailData = {
+        newEmail: this.form.value.email,
+        actualEmail: this.router.url.split('/')[2]
+      }
+      console.log(emailData)
+      this.authService.resendEmailVerification(emailData)
       .pipe(first())
       .subscribe({
           next: () => {
-              this.alertService.success('Thank you. Please check your email.', { keepAfterRouteChange: true, autoClose: true });
+              this.alertService.success('Email verification link send successfully, please verify your email address to login.', { keepAfterRouteChange: true, autoClose: true });
+              this.router.navigate(['/resend-verification-email/'+emailData.newEmail]);
           },
           error: error => {
               this.alertService.error(error.error.message, {autoClose: true});

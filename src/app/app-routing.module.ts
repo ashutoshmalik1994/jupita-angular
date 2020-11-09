@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { ConfirmemailComponent } from './confirmemail/confirmemail.component';
 import { AuthGuard } from './_helpers';
+import { ResendVerificationEmailComponent } from './resend-verification-email/resend-verification-email.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 const routes: Routes = [
   {
@@ -15,6 +17,10 @@ const routes: Routes = [
   {
     path: 'forgot-password',
     loadChildren: () => import('./forgot-password/forgot-password.module').then(m => m.ForgotPasswordModule)
+  },
+  {
+    path: 'reset-password/:id',
+    component: ResetPasswordComponent
   },
   {
     path: 'page-not-found',
@@ -31,6 +37,10 @@ const routes: Routes = [
   {
     path: 'sign-up',
     loadChildren: () => import('./sign-up/sign-up.module').then(m => m.SignUpModule)
+  },
+  {
+    path: 'resend-verification-email/:id',
+    component: ResendVerificationEmailComponent
   },
   {
     path: 'sign-in',

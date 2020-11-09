@@ -57,6 +57,18 @@ export class AuthService {
         }
         return this.http.post(`${environment.apiUrl}/auth/registerUser`, userData);
     }
+
+    resendEmailVerification(user: any) {
+        return this.http.post(`${environment.apiUrl}/auth/resendEmailVerification`, user);
+    }
+
+    sendForgotPasswordLink(user: any) {
+        return this.http.post(`${environment.apiUrl}/auth/sendForgotPasswordLink`, user);
+    }
+
+    resetPassword(passwordData: any) {
+        return this.http.post(`${environment.apiUrl}/auth/resetPassword`, passwordData);
+    }
     
     redirectTo(uri:string){
         this.router.navigateByUrl('/').then(()=>

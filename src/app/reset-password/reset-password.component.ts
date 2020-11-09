@@ -6,17 +6,17 @@ import { AlertService } from '../service/alert.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-forgot-password',
-  templateUrl: './forgot-password.component.html',
-  styleUrls: ['./forgot-password.component.scss']
+  selector: 'app-reset-password',
+  templateUrl: './reset-password.component.html',
+  styleUrls: ['./reset-password.component.scss']
 })
-export class ForgotPasswordComponent implements OnInit {
+export class ResetPasswordComponent implements OnInit {
 
   form: FormGroup;
   loading = false;
   submitted = false;
 
-  constructor(
+  constructor (
     private formBuilder: FormBuilder,
     private authService: AuthService,
     private alertService: AlertService,
@@ -26,11 +26,12 @@ export class ForgotPasswordComponent implements OnInit {
   ngOnInit(): void {
     this.loadScript('../assets/js/particle-background.js');
     this.form = this.formBuilder.group({
-        email: ['', Validators.compose([Validators.required, Validators.email])]
+        passwordGroup: this.formBuilder.group({
+          password: ['', [Validators.required, Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%?&])[A-Za-z\\d$@$!%?&]{8,}$')]],
+          confirmPassword: ['']
+        }, {validator: this.checkPasswords })
     });
   }
-
-  get f() { return this.form.controls; }
 
   public loadScript(url: string) {
     const body = <HTMLDivElement> document.body;
@@ -41,20 +42,33 @@ export class ForgotPasswordComponent implements OnInit {
     script.defer = true;
     body.appendChild(script);
   }
+  
+  checkPasswords(group: FormGroup) { // here we have the 'passwords' group
+    let pass = group.get('password').value;
+    let confirmPass = group.get('confirmPassword').value;
+
+    return pass === confirmPass ? null : { notSame: true }     
+  }
+  get pg() { return this.form.controls.passwordGroup as FormGroup;; }
 
   onSubmit() {
       this.submitted = true;
       
       this.alertService.clear();
+      
       if (this.form.invalid) {
           return;
       }
-      console.log(this.form.value.email)
-      this.authService.sendForgotPasswordLink(this.form.value)
+      const resetData = {
+        password: this.form.value.passwordGroup.password,
+        token: this.router.url.split('/')[2]
+      }
+      this.authService.resetPassword(resetData)
       .pipe(first())
       .subscribe({
           next: () => {
-              this.alertService.success('Thank you. Please check your email.', { keepAfterRouteChange: true, autoClose: true });
+              this.alertService.success('Password reset successfully.', { keepAfterRouteChange: true, autoClose: true });
+              this.router.navigate(['/sign-in']);
           },
           error: error => {
               this.alertService.error(error.error.message, {autoClose: true});

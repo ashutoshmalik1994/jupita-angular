@@ -9,6 +9,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AlertComponent } from './alert/alert.component';
 import { ConfirmemailComponent } from './confirmemail/confirmemail.component';
+import { ResendVerificationEmailComponent } from './resend-verification-email/resend-verification-email.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { ConfirmemailComponent } from './confirmemail/confirmemail.component';
     FooterComponent,
     HeaderComponent,
     AlertComponent,
-    ConfirmemailComponent
+    ConfirmemailComponent,
+    ResendVerificationEmailComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

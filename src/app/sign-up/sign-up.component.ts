@@ -4,8 +4,6 @@ import { first } from 'rxjs/operators';
 import { AuthService } from '../service/auth.service';
 import { AlertService } from '../service/alert.service';
 import { Router } from '@angular/router';
-import * as jQuery from 'jquery';
-import * as particlesJS from '../../assets/js/particles.min.js'
 
 @Component({
   selector: 'app-sign-up',
@@ -71,7 +69,7 @@ export class SignUpComponent implements OnInit {
       .subscribe({
           next: () => {
               this.alertService.success('Registration successful, please verify your email address to login.', { keepAfterRouteChange: true, autoClose: true });
-              this.router.navigate(['/sign-in']);
+              this.router.navigate(['/resend-verification-email/'+this.form.value.email]);
           },
           error: error => {
               this.alertService.error(error.error.message, {autoClose: true});

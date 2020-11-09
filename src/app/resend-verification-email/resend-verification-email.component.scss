@@ -1,0 +1,30 @@
+@import "../../assets/stylesheets/variable.scss";
+.form-panel{
+    margin-top: 30px;
+    span{
+        font-size: 16px;
+        font-family: $font-family-brand;
+        font-weight:  $font-semibold;
+        line-height: 2;
+    }
+}
+.align {
+    text-align: center;
+    margin-top: 25px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px #C6C6C6 inset !important;
+}
+
+.add-label{
+    font-size: 16px;
+}
+
+.error-feedack {
+    color: #C6C6C6;
+    font-size: 11px;
+}

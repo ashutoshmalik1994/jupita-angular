@@ -14,7 +14,9 @@ export class AppComponent {
     router.events.subscribe( event => {
       if (event instanceof NavigationEnd) {
         const urlNotAllowed = event.url.split('/')[1];
-        if (urlNotAllowed == "sign-up" || urlNotAllowed == "sign-in" || urlNotAllowed == "forgot-password" || urlNotAllowed == "confirmation") {
+        console.log(urlNotAllowed);
+        if (
+          urlNotAllowed == "sign-up" || urlNotAllowed == "sign-in" || urlNotAllowed == "forgot-password" || urlNotAllowed == "confirmation" || urlNotAllowed == "resend-verification-email" || urlNotAllowed == "reset-password") {
           this.headerFooter = false;
         } else {
           this.headerFooter = true;
