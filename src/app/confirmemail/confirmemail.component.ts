@@ -21,7 +21,7 @@ export class ConfirmemailComponent implements OnInit {
         .pipe(first())
         .subscribe({
             next: () => {
-                this.alertService.success('Email is verified successfully.', { keepAfterRouteChange: true, autoClose: true });
+                // this.alertService.success('Email is verified successfully.', { keepAfterRouteChange: true, autoClose: true });
                 this.route.navigate(['/sign-in']);
             },
             error: error => {

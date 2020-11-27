@@ -9,12 +9,13 @@
     </div>
     <div class="row justify-content-center form-panel">
         <div class="col-md-4">
-            <label class="add-label">Lorem ipsum dolor sit amet, consectetur </label>
-            <small class="d-block">
+            <label *ngIf="hideMobile" class="add-label show-phone">Thank you, email successfully verified. Please proceed to sign in via desktop or tablet device </label>
+            <label class="add-label hide-phone">Lorem ipsum dolor sit amet, consectetur </label>
+            <small class="d-block hide-phone">
                 Don't have an account? Sign up
-                <strong><a href="/sign-up" class="link-text">here</a></strong>
+                <strong><a href="/sign-up" class="link-text hide-phone">here</a></strong>
             </small>
-            <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-horizontal mt-5 pr-3" method="post" action="#">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-horizontal mt-5 pr-3 hide-phone" method="post" action="#">
 
                 <div class="form-group">
                     <div class="col-sm-12">
@@ -24,8 +25,8 @@
                         <div class="input-group">
                             <input formControlName="email" type="text" class="form-control" name="email" id="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
                             <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-                                <div *ngIf="f.email.errors.required">Email is required.</div>
-                                <div *ngIf="f.email.errors.email">Please enter a valid email address.</div>
+                                <div *ngIf="f.email.errors.required">Email is required</div>
+                                <div *ngIf="f.email.errors.email">Please enter a valid email address</div>
                             </div>
                         </div>
                     </div>
@@ -39,7 +40,7 @@
                         <div class="input-group">
                             <input formControlName="password" type="password" class="form-control" name="password" id="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
                             <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                                <div *ngIf="f.password.errors.required">Email is required.</div>
+                                <div *ngIf="f.password.errors.required">Email is required</div>
                             </div>
                         </div>
                     </div>
@@ -48,6 +49,7 @@
                 <div class="form-group pt-3">
                     <div class="col-sm-12">
                         <button class="btn btn-light btn-lg btn-block login-button mt-2">Continue</button>
+                        <div *ngIf="serverError" class="server-error">Invalid credentials</div>
                     </div>
                 </div>
             </form>

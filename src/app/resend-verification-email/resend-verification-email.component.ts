@@ -21,26 +21,23 @@ export class ResendVerificationEmailComponent implements OnInit {
     private authService: AuthService,
     private alertService: AlertService,
     private router: Router
-  ) { }
+  ) {
+    const body = <HTMLDivElement> document.body;
+    const script = document.createElement('script');
+    script.innerHTML = '';
+    script.src = "../assets/js/particle-background.js";
+    script.async = false;
+    script.defer = true;
+    body.appendChild(script);
+  }
 
   ngOnInit(): void {
-    this.loadScript('../assets/js/particle-background.js');
     this.form = this.formBuilder.group({
         email: ['', Validators.compose([Validators.required, Validators.email])]
     });
   }
 
   get f() { return this.form.controls; }
-
-  public loadScript(url: string) {
-    const body = <HTMLDivElement> document.body;
-    const script = document.createElement('script');
-    script.innerHTML = '';
-    script.src = url;
-    script.async = false;
-    script.defer = true;
-    body.appendChild(script);
-  }
 
   onSubmit() {
       this.submitted = true;

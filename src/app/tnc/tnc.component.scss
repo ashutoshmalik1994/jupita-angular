@@ -9,18 +9,16 @@ h2{
             font-weight:  $font-semibold;           
             font-size: 20px;
             margin: 0 20px;
-            a{
+            label{
                 color: $link-text-primary;
                 padding-left: 0;
                 padding-right: 0;
             }
-            &.active{
-                a{
-                    border-bottom: 2px solid $primary-color;
-                }
-            }
         }
     }
+}
+.active{
+    border-bottom: 2px solid $primary-color;
 }
 @media screen and (max-width:$phone){
     .content-area{

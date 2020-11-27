@@ -9,12 +9,8 @@
     </div>
     <div class="row justify-content-center form-panel">
         <div class="col-md-4">
-            <label class="add-label">Lorem ipsum dolor sit amet, consectetur </label>
-            <small class="d-block">
-                Already a user? Sign in
-                <strong><a href="/sign-in" class="link-text">here</a></strong>
-            </small>
-            <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-horizontal mt-5 pr-3" method="post" action="#">
+            <label class="add-label">Registration successful, please verify your email address to login </label>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-horizontal mt-5 pr-3 hide-phone" method="post" action="#">
 
                 <div class="form-group">
                     <div class="col-sm-12">
@@ -24,8 +20,8 @@
                         <div class="input-group">
                             <input formControlName="email" type="text" class="form-control" name="email" id="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
                             <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-                                <div *ngIf="f.email.errors.required">Email is required.</div>
-                                <div *ngIf="f.email.errors.email">Please enter a valid email address.</div>
+                                <div *ngIf="f.email.errors.required">Email is required</div>
+                                <div *ngIf="f.email.errors.email">Please enter a valid email address</div>
                             </div>
                         </div>
                     </div>

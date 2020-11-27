@@ -4,11 +4,13 @@ import { ConfirmemailComponent } from './confirmemail/confirmemail.component';
 import { AuthGuard } from './_helpers';
 import { ResendVerificationEmailComponent } from './resend-verification-email/resend-verification-email.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { HomeComponent } from './home/home.component';
+import { TncComponent } from './tnc/tnc.component';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
+    component: HomeComponent
   },
   {
     path: 'document',
@@ -47,8 +49,9 @@ const routes: Routes = [
     loadChildren: () => import('./sign-in/sign-in.module').then(m => m.SignInModule)
   },
   {
-    path: 'termsandconditions',
-    loadChildren: () => import('./tnc/tnc.module').then(m => m.TncModule)
+    path: 'termsandconditions/:id',
+    component: TncComponent
+    // loadChildren: () => import('./tnc/tnc.module').then(m => m.TncModule)
   },
   {
     path: 'user',

@@ -15,6 +15,8 @@ export class SignInComponent implements OnInit {
   form: FormGroup;
   loading = false;
   submitted = false;
+  serverError = false;
+  hideMobile = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -22,24 +24,24 @@ export class SignInComponent implements OnInit {
     private alertService: AlertService,
     private route: ActivatedRoute,
     private router: Router
-  ) { }
+  ) {
+    const body = <HTMLDivElement> document.body;
+    const script = document.createElement('script');
+    script.innerHTML = '';
+    script.src = "../assets/js/particle-background.js";
+    script.async = false;
+    script.defer = true;
+    body.appendChild(script);
+  }
 
   ngOnInit(): void {
-    this.loadScript('../assets/js/particle-background.js');
+    if(document.referrer.split("/")[3] == "confirmation"){
+      this.hideMobile = true;
+    }
     this.form = this.formBuilder.group({
         email: ['', Validators.compose([Validators.required, Validators.email])],
         password: ['', Validators.required]
     });
-  }
-
-  public loadScript(url: string) {
-    const body = <HTMLDivElement> document.body;
-    const script = document.createElement('script');
-    script.innerHTML = '';
-    script.src = url;
-    script.async = false;
-    script.defer = true;
-    body.appendChild(script);
   }
   
   get f() { return this.form.controls; }
@@ -65,10 +67,8 @@ export class SignInComponent implements OnInit {
                   this.alertService.success('Login successful.', { keepAfterRouteChange: true, autoClose: true });
               },
               error: error => {
-                if(error.status == 503) {
-                  this.alertService.error('Invalid credentials!', {autoClose: true});
-                  this.loading = false;
-                }
+                this.serverError = true;
+                this.loading = false;
               }
           });
   }

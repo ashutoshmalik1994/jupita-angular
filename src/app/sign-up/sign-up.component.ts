@@ -21,28 +21,25 @@ export class SignUpComponent implements OnInit {
     private authService: AuthService,
     private alertService: AlertService,
     private router: Router
-  ) { }
+  ) {
+    const body = <HTMLDivElement> document.body;
+    const script = document.createElement('script');
+    script.innerHTML = '';
+    script.src = "../assets/js/particle-background.js";
+    script.async = false;
+    script.defer = true;
+    body.appendChild(script);
+  }
 
   ngOnInit(): void {
-    this.loadScript('../assets/js/particle-background.js');
     this.form = this.formBuilder.group({
         email: ['', Validators.compose([Validators.required, Validators.email])],
         username: ['', Validators.required],
         passwordGroup: this.formBuilder.group({
-          password: ['', [Validators.required, Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%?&])[A-Za-z\\d$@$!%?&]{8,}$')]],
+          password: ['', [Validators.required, Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@#$!%^?&*()_+])[A-Za-z\\d$@#$!%^?&*()_+]{8,}$')]],
           confirmPassword: ['']
         }, {validator: this.checkPasswords })
     });
-  }
-
-  public loadScript(url: string) {
-    const body = <HTMLDivElement> document.body;
-    const script = document.createElement('script');
-    script.innerHTML = '';
-    script.src = url;
-    script.async = false;
-    script.defer = true;
-    body.appendChild(script);
   }
   
   checkPasswords(group: FormGroup) { // here we have the 'passwords' group
@@ -68,7 +65,7 @@ export class SignUpComponent implements OnInit {
       .pipe(first())
       .subscribe({
           next: () => {
-              this.alertService.success('Registration successful, please verify your email address to login.', { keepAfterRouteChange: true, autoClose: true });
+              // this.alertService.success('Registration successful, please verify your email address to login.', { keepAfterRouteChange: true, autoClose: true });
               this.router.navigate(['/resend-verification-email/'+this.form.value.email]);
           },
           error: error => {

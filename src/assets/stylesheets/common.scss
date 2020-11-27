@@ -4,9 +4,8 @@
     border-radius: 0;
     border:none;
     line-height: 1;
-    font-size: 16px;
-    font-family: $font-family-brand !important;
-    font-weight:  $font-semibold !important;
+    font-size: 20px;
+    font-family: $font-family-semibold !important;
     color: $primary-font-color !important;
     &:focus,&:active{
         border:none;
@@ -50,11 +49,11 @@
     height: 100%;
     overflow: hidden;
     position: absolute;
-    top:0;
-    right:0;
+    top:-40px;
+    right:-40px;
 }
 
-#particle-sphere {
+.particle-sphere {
     position: relative;
     top: 50%;
     left: 50%;
@@ -62,6 +61,7 @@
     height: 0;
     transform-style: preserve-3d;
     perspective: 1000px;
+    -webkit-animation: rotate $time infinite linear;
     animation: rotate $time infinite linear;
 }
 .ww-200 {
@@ -121,7 +121,9 @@
     body .c:nth-child(#{$i}) {
         background-color: hsla($hue, 0%, 85%, 1);
         opacity: 0 !important;
+        -webkit-animation: orbita3#{$i} 10s infinite !important;
         animation: orbita3#{$i} 10s infinite !important;
+        -webkit-animation-delay: (368 - $i) * 1s !important;
         animation-delay: (368 - $i) * 1s !important;
     }
     @keyframes orbita3#{$i} {
@@ -151,7 +153,9 @@
     $hue: ((40 / $total * $i) + $base-hue); // set hue
     .c:nth-child(#{$i}) {
         // grab the nth particle
+        -webkit-animation: orbit#{$i} 15s 1;
         animation: orbit#{$i} 15s 1;
+        -webkit-animation-delay: ($i * 0.01s);
         animation-delay: ($i * 0.01s);
         background-color: hsla($hue, 0%, 84.6%, 1);
         opacity: 0;
@@ -178,7 +182,9 @@
     $y: (random(360) * 1deg); // random to rotateX
     $hue: ((40 / $total * $i) + $base-hue); // set hue
     .c.active:nth-child(#{$i}) {
+        -webkit-animation: orbita#{$i} 3s 1 !important;
         animation: orbita#{$i} 3s 1 !important;
+        -webkit-animation: rotateZ(-$z) rotateY($y) translateX(($orb-size)) rotateZ($z);
         transform: rotateZ(-$z) rotateY($y) translateX(($orb-size)) rotateZ($z);
         opacity: 1;
     }
@@ -201,13 +207,13 @@
     z-index: 1;
 }
 
- .wave-section{
-   overflow: hidden;
-   height:220px;
-   canvas{
-         width:99.9% !important;
-    }
- }
+//  .wave-section{
+//    overflow: hidden;
+//    height:220px;
+//    canvas{
+//          width:99.9% !important;
+//     }
+//  }
 .partical-bg-wrap{
     position: fixed;
     top:0;
@@ -223,11 +229,11 @@
     .globe-wrap{
         app-globe {
 
-    .js-globe{
-        left:45% !important;  
+            .js-globe{
+                left:45% !important;
+            }
+        }
     }
-}
-}
 }
 @media screen and (min-width:1500px){
     .globe-wrap{

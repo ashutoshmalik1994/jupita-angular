@@ -6,23 +6,35 @@
             </div>
                 <nav class="page-navigation">
                       <ul class="d-flex justify-content-center align-items-center list-unstyled">
-                        <li class="nav-item active">
-                          <a class="nav-link" href="#" routerLink="/" routerLinkActive="active">Terms <span class="sr-only">(current)</span></a>
+                        <li class="nav-item">
+                          <label (click)="termsConditions('terms')" class="nav-link" [ngClass]="(urlPath == 'terms') ? 'active' : ''">Terms</label>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#" routerLink="/" routerLinkActive="active">Privacy</a>
+                          <label (click)="termsConditions('privacy')" class="nav-link" [ngClass]="(urlPath == 'privacy') ? 'active' : ''">Privacy</label>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#" routerLink="/" routerLinkActive="active">GDPR</a>
+                          <label (click)="termsConditions('gdpr')" class="nav-link" [ngClass]="(urlPath == 'gdpr') ? 'active' : ''">GDPR</label>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" routerLink="/" routerLinkActive="active">CCPA</a>
+                          <label (click)="termsConditions('ccpa')" class="nav-link" [ngClass]="(urlPath == 'ccpa') ? 'active' : ''">CCPA</label>
                         </li>
                       </ul>
                   </nav>
-                  <div class="content-area col-md-12 col-lg-6 ml-auto mr-auto mt-6 mb-9">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  <div *ngIf="urlPath == 'terms'" class="content-area col-md-12 col-lg-6 ml-auto mr-auto mt-6 mb-9">
+                      <p>Terms Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                      <p>Terms Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  </div>
+                  <div *ngIf="urlPath == 'privacy'" class="content-area col-md-12 col-lg-6 ml-auto mr-auto mt-6 mb-9">
+                      <p>Privacy Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                      <p>Privacy Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  </div>
+                  <div *ngIf="urlPath == 'gdpr'" class="content-area col-md-12 col-lg-6 ml-auto mr-auto mt-6 mb-9">
+                      <p>GDPR ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                      <p>GDPR Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  </div>
+                  <div *ngIf="urlPath == 'ccpa'" class="content-area col-md-12 col-lg-6 ml-auto mr-auto mt-6 mb-9">
+                      <p>CCPA Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                      <p>CCPA Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                   </div>
                   <div class="panel-second mb-6 mt-5">
                     <div class="col-md-12">

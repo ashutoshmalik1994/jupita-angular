@@ -1,20 +1,4 @@
-import {
-    _ as t
-} from "./_rollupPluginBabelHelpers-e36f2efa.js";
-import {
-    F as e
-} from "./additional.js";
-
-/**
- * IN THIS @class Globe is exported. to use that just
- * create @object of that class pass the element 
- * you want to add globe in and then run function 
- * load() and play()
- * @function load is used to load the canvas in the
- * DOM that you provided.
- * @function run rander the globe and starts the animation.
- */
-
+import{_ as t}from"./_rollupPluginBabelHelpers-e36f2efa.js";import {F as e} from"./additional.js";
 const i = {
     easeInOutCubic: function(t, n, e, u) {
         return (t /= u / 2) < 1 ? e / 2 * t * t * t + n : e / 2 * ((t -= 2) * t * t + 2) + n
@@ -15955,7 +15939,7 @@ export class Globe {
         this.countryList = t
     }
     addCamera() {
-        const t = 1 * this.windowH,
+        const t = 0.9 * this.windowH,
             e = -this.aspectRatio * this.windowH * 1,
             i = 4 * this.globeRadius;
         this.camera || (this.camera = new Gs(0, 0, 0, 0, 0, 0)), this.camera.left = e, this.camera.right = -e, this.camera.top = t, this.camera.bottom = -t, this.camera.near = -i, this.camera.far = i, this.shiftCamera(), this.camera.updateProjectionMatrix()

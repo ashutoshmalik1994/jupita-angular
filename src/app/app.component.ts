@@ -14,9 +14,15 @@ export class AppComponent {
     router.events.subscribe( event => {
       if (event instanceof NavigationEnd) {
         const urlNotAllowed = event.url.split('/')[1];
-        console.log(urlNotAllowed);
         if (
           urlNotAllowed == "sign-up" || urlNotAllowed == "sign-in" || urlNotAllowed == "forgot-password" || urlNotAllowed == "confirmation" || urlNotAllowed == "resend-verification-email" || urlNotAllowed == "reset-password") {
+          // const body = <HTMLDivElement> document.body;
+          // const script = document.createElement('script');
+          // script.innerHTML = '';
+          // script.src = "../assets/js/particle-background.js";
+          // script.async = false;
+          // script.defer = true;
+          // body.appendChild(script);
           this.headerFooter = false;
         } else {
           this.headerFooter = true;

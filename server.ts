@@ -18,13 +18,14 @@ win.matchMedia = window.matchMedia || function() {
 };
 
 import { ngExpressEngine } from '@nguniversal/express-engine';
+const compression = require('compression')
 import * as express from 'express';
 import { join } from 'path';
 
 import { AppServerModule } from './src/main.server';
 import { APP_BASE_HREF } from '@angular/common';
 import { existsSync } from 'fs';
-import * as compression from 'compression';
+// import * as compression from 'compression';
 import { enableProdMode } from '@angular/core';
 
 enableProdMode();

@@ -7,10 +7,13 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { AlertComponent } from './alert/alert.component';
 import { ConfirmemailComponent } from './confirmemail/confirmemail.component';
 import { ResendVerificationEmailComponent } from './resend-verification-email/resend-verification-email.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { GlobeComponent } from './animation/globe/globe.component';
+import { TncComponent } from './tnc/tnc.component';
 
 
 @NgModule({
@@ -18,18 +21,21 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     AppComponent,
     FooterComponent,
     HeaderComponent,
-    AlertComponent,
     ConfirmemailComponent,
     ResendVerificationEmailComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    GlobeComponent,
+    TncComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [GlobeComponent]
 })
 export class AppModule { }

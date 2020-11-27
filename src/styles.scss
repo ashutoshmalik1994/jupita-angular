@@ -8,12 +8,34 @@
 @font-face {
 
     font-family: $font-family-brand;
-    src: local('Montserrat-Regular'),url($montserrat-regularwoff2-font-path) format('woff2'),
-    url($montserrat-regularwoff-font-path) format('woff'), url($montserrat-regularttf-font-path) format('truetype');
+    src: url($montserrat-regularttf-font-path) format('truetype');
     font-weight: 400;
     font-style: normal;
     font-display: block;  
 }
+@font-face {
+
+    font-family: $font-family-semibold;
+    src: url($montserrat-semiboldttf-font-path) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;  
+}
+@font-face {
+    font-family: $font-family-light;
+    src: url($montserrat-light-ttf-font-path) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;  
+}
+@font-face {
+    font-family: $font-family-poppins;
+    src: url($poppins-light-ttf-font-path) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;  
+}
+
   html{
     font-family:$font-family-brand !important;
   }
@@ -36,6 +58,7 @@ body{
     .form-group{
         margin-bottom: 37px;
         label{
+            float: left;
             &.control-label{
                 font-size: 11px;
                 font-family: $font-family-brand;
@@ -66,8 +89,7 @@ body{
             line-height: 1;
             font-size: 16px;
             color:$primary-font-color;
-            font-family: $font-family-brand !important;
-            font-weight:  $font-semibold !important;        
+            font-family: $font-family-semibold !important;       
         }
         .msg{
             width:100%;

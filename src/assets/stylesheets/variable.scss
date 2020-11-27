@@ -1,7 +1,11 @@
-$montserrat-regularwoff-font-path: "assets/fonts/Montserrat-Regular.woff";
-$montserrat-regularwoff2-font-path: "assets/fonts/Montserrat-Regular.woff2";
 $montserrat-regularttf-font-path: "assets/fonts/Montserrat-Regular.ttf";
+$montserrat-semiboldttf-font-path: "assets/fonts/Montserrat-SemiBold.ttf";
+$montserrat-light-ttf-font-path: "assets/fonts/Montserrat-Light.ttf";
+$poppins-light-ttf-font-path: "assets/fonts/Poppins-Light.ttf";
 $font-family-brand: 'Montserrat-Regular';
+$font-family-semibold: 'Montserrat-SemiBold';
+$font-family-light: 'Montserrat-Light';
+$font-family-poppins:'Poppins-Light';
 
 $primary-color:#C6C6C6;
 $link-text-primary:#C6C6C6;
@@ -9,9 +13,8 @@ $primary-font-color:#181818;
 
 
 //  $font-regular:'Montserrat-Regular';
-  $font-semibold: 600;
-  $font-light:300;
-  $font-family-poppins:'Poppins', sans-serif;
+$font-semibold: 600;
+$font-light:300;
 // Responsive screen declaration
 $phone: 767px;
 $tablet-min:768px;

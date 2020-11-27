@@ -1,4 +1,4 @@
-<div class="main-container">
+<div class="main-container" (scroll)="scrollHandler($event)">
     <div class="row">
         <!-- Banner section -->
         <div class="banner-section mb-9 pt-10 d-flex w-100">
@@ -11,7 +11,10 @@
                         routerLink="/sign-up">Sign up</button>
                 </div>
                 <div class="" style="position: absolute; z-index: 9999; width:50%; height:100%; right: 0; top:70px">
-                    <app-sphere></app-sphere>
+                    <div class="sphere-wrapper">
+                        <div class="particle-sphere">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -19,7 +22,7 @@
         <div class="panel-first mb-9 pt-8">
             <div class="col-md-12 article-box">
                 <div class="col-md-6 float-left pr-7 article-col">
-                    <img src="https://therajdhani.com/wp-content/uploads/2019/04/vga.png" width="640" height="480"
+                    <img src="../../assets/images/vga.png" width="640" height="480"
                         class="img-fluid" alt="img">
                 </div>
                 <div class="col-md-6 float-right pl-7 article-col">
@@ -95,7 +98,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 float-right pl-6 article-col">
-                    <img src="https://therajdhani.com/wp-content/uploads/2019/04/vga.png" width="640" height="620"
+                    <img src="../../assets/images/vga.png" width="640" height="620"
                         style="height:620px" class="img-fluid" alt="img">
                 </div>
             </div>
@@ -135,7 +138,8 @@
         </div>
     </div>
         <div class="globe-wrap">
-            <app-globe></app-globe>
+            <div #parent></div>
+            <!-- <app-globe></app-globe> -->
         </div>
     </div>
 </div>

@@ -19,13 +19,13 @@
                 margin-left: 15px;
                 line-height: 1.8;
                 letter-spacing: 1px;
-                font-family: $font-family-brand;
+                font-family: $font-family-light;
                 a{
                     color:$primary-color;
                     padding-right:0;
                 }
                 &:last-child{
-                    font-family: $font-family-brand;
+                    font-family: $font-family-semibold;
                     font-weight:  $font-semibold;
                     margin-right:0;
                 }
