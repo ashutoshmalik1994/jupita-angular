@@ -13,7 +13,7 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'document',
+    path: 'docs',
     loadChildren: () => import('./document/document.module').then(m => m.DocumentModule)
   },
   {
@@ -33,7 +33,7 @@ const routes: Routes = [
     loadChildren: () => import('./pricing/pricing.module').then(m => m.PricingModule)
   },
   {
-    path: 'product',
+    path: 'products',
     loadChildren: () => import('./product/product.module').then(m => m.ProductModule)
   },
   {

@@ -26,4 +26,8 @@ export class TncComponent implements OnInit {
     this.location.replaceState("/termsandconditions/"+parameter);
   }
 
+  redirectToSignUP(){
+    this.router.navigate(['/sign-up']);
+  }
+
 }

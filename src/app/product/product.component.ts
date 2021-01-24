@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject, PLATFORM_ID, Renderer2, ViewChild, ElementRef, NgZone } from '@angular/core';
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import * as THREE from "../../assets/js/three.js";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product',
@@ -31,11 +32,15 @@ export class ProductComponent implements OnInit {
 
   timerExicutions = 0;
 
-  constructor(private rnd: Renderer2, @Inject(DOCUMENT) private document: Document, @Inject(PLATFORM_ID) platformId: Object, private _ngZone: NgZone) {
+  constructor(private rnd: Renderer2, @Inject(DOCUMENT) private document: Document, @Inject(PLATFORM_ID) platformId: Object, private _ngZone: NgZone, private router: Router) {
     this.isBrowser = isPlatformBrowser(platformId);
   }
 
   @ViewChild('tasknote', { read: ElementRef, static: false }) elem: ElementRef;
+
+  redirectToSignUP(){
+    this.router.navigate(['/sign-up']);
+  }
 
   ngOnInit(): void {
     this._ngZone.runOutsideAngular(() => {

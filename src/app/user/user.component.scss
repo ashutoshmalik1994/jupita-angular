@@ -1,0 +1,253 @@
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+
+::ng-deep body{
+    background-color: #fff !important;
+}
+
+  ::ng-deep .user-header{
+      .navbar{
+        box-shadow: none !important;
+        margin-bottom: 0 !important;
+      }
+      .navbar-search{
+          .form-control{
+              border:none;
+              width:450px;
+              padding-left:0px;
+              &:focus{
+                  outline: none !important;
+                  border:none !important;
+                  box-shadow: none;
+              }
+          }
+          .input-group-prepend{
+              .input-group-text{
+                  border:none;
+              }
+          }
+      }
+      ul.navbar-nav{
+          li{
+              margin-left:5px;
+              a{
+                  cursor: pointer;
+                  &:after{
+                      content: normal;
+                  }
+              }
+          }
+      }
+  }
+  ::ng-deep .main-content{
+      padding: 25px 0;
+  }
+  ::ng-deep .sidebar{
+      width:230px;
+      float:left;
+      background-color: rgb(247, 250, 252);
+      border-right:  1px solid #e3e8ee;
+  }
+  ::ng-deep .sidebar ul{
+      list-style-type: none;
+  }
+  ::ng-deep .sidebar{
+      height: 100vh;
+      padding-top:10px;
+      ul{
+          padding:0;
+          li{
+            a{
+              color:rgb(26, 31, 54);
+              i{
+                  margin-right:6px;
+                  width: 20px;
+              }
+            }
+            &.active{
+                a{
+                    color:rgb(84, 105, 212);
+                    font-weight: bold;
+                }
+            }
+        }
+      }
+      
+
+  }
+
+  ::ng-deep .content{
+      overflow: hidden;
+  }
+  ::ng-deep .user-header{
+    border-bottom:  1px solid #e3e8ee;
+
+  }
+  /* -----------------> can start accordion style copy from here ------------------------*/
+
+  ::ng-deep .accordion-started.accordion-bral {
+    min-height: 0;
+    min-width: 220px;
+    width: 100%;
+    background-color: #FFF;
+    margin: 0px!important;
+    color: #484848;
+  }
+  ::ng-deep .accordion-started.accordion-bral img {
+      width: 100%;
+      height: 100%;
+  }
+  ::ng-deep .accordion-started.accordion-bral .ac-label {
+    font-family: Arial, sans-serif;
+    padding: 15px 20px;
+    position: relative;
+    display: block;
+    height: auto;
+    cursor: pointer;
+    color:rgb(84, 105, 212);
+    border-bottom: 1px solid #e3e8ee;
+    margin-bottom: 0;
+    
+    line-height: 33px;
+    font-size: 15px;
+    font-weight: 300;
+    padding-left:38px !important;
+    .right-closebtn{
+        visibility: hidden;
+    }
+    &:last-child{
+        border-bottom: none !important;
+    }
+  }
+  ::ng-deep .accordion-started.accordion-bral .ac-label:hover {
+    
+  }
+  ::ng-deep .accordion-started.accordion-bral input + .ac-label  {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  ::ng-deep .accordion-started.accordion-bral input:checked + .ac-label,
+  .accordion-started.accordion-bral input:checked + .ac-label:active {
+      border-bottom: none;
+      color:rgb(26, 31, 54);
+      background-color: #f7fafc;
+      font-weight: 600;
+      .right-closebtn{
+        visibility: visible;
+    }
+
+    
+  }
+  ::ng-deep .accordion-started.accordion-bral input.ac-input {
+    display: none;
+  }
+  ::ng-deep .accordion-started.accordion-bral .article {
+    overflow: hidden;
+    height: 0px;
+    max-height: auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  ::ng-deep .accordion-started.accordion-bral .article p {
+    line-height: 23px;
+    padding-left: 5px;
+  }
+  ::ng-deep .accordion-started.accordion-bral input:checked ~ .article i {
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+  ::ng-deep .accordion-started.accordion-bral input:checked ~ .article.ac-content {
+    height: auto;
+    
+    padding-left:  33px;
+    padding-right:15px;
+    padding-bottom: 20px;
+    background-color: #f7fafc;
+    p{
+        font-size: 14px;
+        word-break: break-all;
+    }
+    .link-text{
+        color:rgb(84, 105, 212);
+        font-weight: bold;
+
+    }
+  }
+  
+  ::ng-deep .accordion-started.accordion-bral i {
+    position: absolute;
+    transform: translate(22px, -4px);
+    margin-top: 16px;
+    left: 0;
+  }
+  ::ng-deep .accordion-started.accordion-bral input:checked ~ .ac-label i:before {
+    transform: translate(2px, 0) rotate(-45deg);
+  }
+  ::ng-deep .accordion-started.accordion-bral input:checked ~ .ac-label i:after {
+    transform: translate(-2px, 0) rotate(45deg);
+  }
+  ::ng-deep .accordion-started.accordion-bral i:before, .accordion-bral i:after {
+    content: "";
+    position: absolute;
+    background-color: #173B6B;
+    width: 2px;
+    height: 8px;
+  }
+  ::ng-deep .accordion-started.accordion-bral i:before {
+    transform: translate(-2px, 0) rotate(-45deg);
+  }
+  ::ng-deep .accordion-started.accordion-bral i:after {
+    transform: translate(2px, 0) rotate(45deg);
+  }
+  
+  ::ng-deep .accordion-started ul.ac-list {
+    padding-left: 40px;
+    list-style-type: disc;  
+  }
+  
+  ::ng-deep .user-accordion{
+    border: 1px solid #e3e8ee;
+    border-radius:6px;
+    margin-left: 1.5%;
+    margin-right:1.5%;
+    width: 97%;
+    .right-closebtn{
+        right:24px;
+        color:rgb(26, 31, 54) !important;
+        top:24px;
+        position: absolute;
+    }
+      .btn{
+          background-color: rgb(84, 105, 212) !important;
+          font-size: 14px;
+          color:#fff !important;
+          border-radius: 6px;
+          &.btn-light{
+              background-color: #fff !important;
+              border:1px solid #e3e8ee !important;
+              color:rgb(26, 31, 54) !important;
+            }
+      }
+      .no-accordion{
+
+        .ac-label{
+padding-left: 15px !important;  
+border-bottom:1px solid #e3e8ee !important
+          }
+          .right-closebtn{
+
+    visibility: visible !important;
+}
+      }
+
+     
+  }
+  /* ---------- accordion style end --------------------------------------- */

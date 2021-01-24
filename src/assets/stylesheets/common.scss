@@ -207,13 +207,13 @@
     z-index: 1;
 }
 
-//  .wave-section{
-//    overflow: hidden;
-//    height:220px;
-//    canvas{
-//          width:99.9% !important;
-//     }
-//  }
+#particle-js {
+    height: 30vh;
+}
+
+ .wave-section{
+   overflow: hidden;
+ }
 .partical-bg-wrap{
     position: fixed;
     top:0;

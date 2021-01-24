@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ViewContainerRef, ComponentFactoryResolver, ComponentRef, HostListener } from '@angular/core';
 import { GlobeComponent } from '../animation/globe/globe.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,7 @@ export class HomeComponent implements OnInit {
   globeInitial: number = 0;
 
   public isBrowsers: boolean;
-  constructor(private componentFactoryResolver: ComponentFactoryResolver) {
+  constructor(private componentFactoryResolver: ComponentFactoryResolver, private router: Router) {
     const body = <HTMLDivElement> document.body;
     const script = document.createElement('script');
     script.innerHTML = '';
@@ -39,6 +40,10 @@ export class HomeComponent implements OnInit {
       this.componentRef = this.target.createComponent(childComponent);
     }
     this.globeInitial++;
+  }
+
+  redirectToSignUP(){
+    this.router.navigate(['/sign-up']);
   }
 
 }

@@ -9,6 +9,7 @@ import { Router, NavigationEnd } from '@angular/router';
 export class AppComponent {
   title = 'jupita-frontend';
   headerFooter: boolean = true;
+  userHeaderFooter: boolean = true;
 
   constructor(private router: Router) {
     router.events.subscribe( event => {
@@ -16,16 +17,15 @@ export class AppComponent {
         const urlNotAllowed = event.url.split('/')[1];
         if (
           urlNotAllowed == "sign-up" || urlNotAllowed == "sign-in" || urlNotAllowed == "forgot-password" || urlNotAllowed == "confirmation" || urlNotAllowed == "resend-verification-email" || urlNotAllowed == "reset-password") {
-          // const body = <HTMLDivElement> document.body;
-          // const script = document.createElement('script');
-          // script.innerHTML = '';
-          // script.src = "../assets/js/particle-background.js";
-          // script.async = false;
-          // script.defer = true;
-          // body.appendChild(script);
           this.headerFooter = false;
+          this.userHeaderFooter = false;
         } else {
           this.headerFooter = true;
+          this.userHeaderFooter = false;
+        }
+        if(urlNotAllowed == "user") {
+          this.userHeaderFooter = true;
+          this.headerFooter = false;
         }
       }
     });
